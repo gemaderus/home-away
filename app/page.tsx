@@ -1,5 +1,14 @@
+import { Button, buttonVariants } from "@/components/ui/button";
+
 const HomePage = () => {
-	return <h1>Home Page</h1>;
+	return (
+		<div>
+			<h1>Home Page</h1>
+			<Button variant="outline" size="lg" className="capitalize">
+				Click me
+			</Button>
+		</div>
+	);
 };
 
 export default HomePage;

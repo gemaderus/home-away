@@ -1,5 +1,5 @@
-const RentalsPage = () => {
-	return <h1 className="text-3xl">RentalsPage</h1>;
+const MyRentalsPage = () => {
+	return <h1 className="text-3xl">MyRentalsPage</h1>;
 };
 
-export default RentalsPage;
+export default MyRentalsPage;
