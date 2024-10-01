@@ -10,7 +10,7 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import UserIcon from "./UserIcon";
 import SignOutLink from "./SignOutLink";
-import { links } from "@/utils/links";
+import { links } from "@/utils/links.ts";
 import {
 	SignedOut,
 	SignedIn,
