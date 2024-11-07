@@ -10,13 +10,12 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import UserIcon from "./UserIcon";
 import SignOutLink from "./SignOutLink";
-import { links } from "@/utils/links.ts";
+import { links } from "@/utils/links";
 import {
 	SignedOut,
 	SignedIn,
 	SignInButton,
-	SignUpButton,
-	SignOutButton,
+	SignUpButton
 } from "@clerk/nextjs";
 
 const LinksDropdown = () => {
