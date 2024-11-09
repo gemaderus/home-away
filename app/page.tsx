@@ -1,14 +1,22 @@
-import { Button } from "@/components/ui/button";
+import CategoriesList from '@/components/home/CategoriesList';
+import PropertiesContainer from '@/components/home/PropertiesContainer';
 
-const HomePage = () => {
-	return (
-		<div>
-			<h1>Home Page</h1>
-			<Button variant="outline" size="lg" className="capitalize">
-				Click me
-			</Button>
-		</div>
-	);
+type searchProps = {
+  category?: string;
+  search?: string;
+};
+
+type HomePageProps = {
+  searchParams: searchProps;
+};
+
+const HomePage = ({ searchParams }: HomePageProps) => {
+  return (
+    <section>
+      <CategoriesList category={searchParams.category} />
+      <PropertiesContainer />
+    </section>
+  );
 };
 
 export default HomePage;
