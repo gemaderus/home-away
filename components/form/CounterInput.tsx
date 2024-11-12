@@ -41,7 +41,7 @@ const CounterInput = ({ detail, defaultValue }: CounterInputProps) => {
               <LuMinus className="w-5 h-5 text-primary" size={20} />
             </Button>
             <span className="text-xl font-bold w-5 text-center">{count}</span>
-            <Button variant="outline" onClick={increaseCount}>
+            <Button variant="outline" onClick={increaseCount} type="button">
               <LuPlus size={20} className="" />
             </Button>
           </div>
