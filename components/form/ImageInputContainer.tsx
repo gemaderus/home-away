@@ -22,8 +22,6 @@ const ImageInputContainer = (props: ImageInputContainerProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isUpdateFormVisible, setIsUpdateFormVisible] = useState(false);
 
-  console.log('isFormVisible', isUpdateFormVisible);
-
   const userIcon = <LuUser2 size={20} className="w-24 h-24 bg-primary rounded text-white" />;
 
   return (

@@ -29,7 +29,6 @@ export const createProfileAction = async (prevState: any, formData: FormData) =>
   try {
     const user = await currentUser();
     if (!user) throw new Error('Please login to create a profile');
-    console.log(user);
     const rawData = Object.fromEntries(formData);
     const validatedFields = profileSchema.parse(rawData);
 
@@ -48,7 +47,6 @@ export const createProfileAction = async (prevState: any, formData: FormData) =>
       },
     });
   } catch (error) {
-    console.log(error);
     return {
       message: error instanceof Error ? error.message : 'An error occured',
     };
@@ -105,7 +103,6 @@ export const updateProfileAction = async (
 
     revalidatePath('/profile');
   } catch (error) {
-    console.log('error', error);
     return renderError(error);
   }
   redirect('/');
@@ -135,7 +132,6 @@ export const updateProfileImageAction = async (
     revalidatePath('/profile');
     return { message: 'Profile image updated successfully' };
   } catch (error) {
-    console.log('error', error);
     return renderError(error);
   }
 };
@@ -145,7 +141,6 @@ export const createPropertyAction = async (
   formData: FormData,
 ): Promise<{ message: string }> => {
   const user = await getAuthUser();
-
   try {
     const rawData = Object.fromEntries(formData);
     const file = formData.get('image') as File;
@@ -160,12 +155,9 @@ export const createPropertyAction = async (
         profileId: user.id,
       },
     });
-
-    return { message: 'Property created successfully' };
   } catch (error) {
     return renderError(error);
   }
-
   redirect('/');
 };
 
@@ -174,16 +166,14 @@ export const fetchProperties = async ({
   category,
 }: {
   search?: string;
-  category: string;
+  category?: string;
 }) => {
   const properties = await db.property.findMany({
     where: {
       category,
       OR: [
-        {
-          name: { contains: search, mode: 'insensitive' },
-          tagline: { contains: search, mode: 'insensitive' },
-        },
+        { name: { contains: search, mode: 'insensitive' } },
+        { tagline: { contains: search, mode: 'insensitive' } },
       ],
     },
     select: {
@@ -192,11 +182,11 @@ export const fetchProperties = async ({
       tagline: true,
       country: true,
       price: true,
+      image: true,
     },
     orderBy: {
       createdAt: 'desc',
     },
   });
-
   return properties;
 };
