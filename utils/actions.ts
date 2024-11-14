@@ -214,7 +214,6 @@ export const toggleFavoriteAction = async (prevState: {
 }) => {
   const user = await getAuthUser();
   const { propertyId, favoriteId, pathname } = prevState;
-  console.log(propertyId, favoriteId, pathname);
 
   try {
     if (favoriteId) {
