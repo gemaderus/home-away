@@ -5,7 +5,15 @@ import { LuUser2 } from 'react-icons/lu';
 const UserIcon = async () => {
   const profileImage = await fetchProfileImage();
   if (profileImage) {
-    return <Image src={profileImage} className="w-6 h-6 rounded-full" alt={profileImage} />;
+    return (
+      <Image
+        src={profileImage}
+        className="w-6 h-6 rounded-full"
+        alt={profileImage}
+        width={30}
+        height={30}
+      />
+    );
   }
   return <LuUser2 className="w-6 h-6 bg-primary rounded-full text-white" />;
 };
