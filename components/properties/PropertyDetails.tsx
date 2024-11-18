@@ -1,6 +1,4 @@
 import { formatQuantity } from '@/utils/format';
-import dynamic from 'next/dynamic';
-import { Skeleton } from '../ui/skeleton';
 
 type PropertyDetailsProps = {
   details: {

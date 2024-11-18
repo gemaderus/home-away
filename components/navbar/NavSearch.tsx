@@ -23,11 +23,13 @@ const NavSearch = () => {
     replace(`${pathName}?${params.toString()}`);
   });
 
+  const param = searchParams.get('search');
+
   useEffect(() => {
-    if (!searchParams.get('search')) {
+    if (!param) {
       setSearch('');
     }
-  }, [searchParams.get('search')]);
+  }, [param]);
 
   return (
     <Input

@@ -10,7 +10,7 @@ const EmptyList = ({
   heading = 'No items in the list',
   message = 'Keep exploring our properties',
   btnText = 'back home',
-}) => {
+}: EmptyListProps) => {
   return (
     <div className="mt-4">
       <h2 className="text-xl font-bold">{heading}</h2>

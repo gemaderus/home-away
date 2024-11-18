@@ -1,11 +1,11 @@
 import { FaStar } from 'react-icons/fa';
 
 type PropertyRatingProps = {
-  propertyId: string;
+  propertyId?: string;
   inPage: boolean;
 };
 
-const PropertyRating = ({ propertyId, inPage }: PropertyRatingProps) => {
+const PropertyRating = ({ inPage }: PropertyRatingProps) => {
   const rating = 4.5;
   const count = 100;
 
