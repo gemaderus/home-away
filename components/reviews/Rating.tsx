@@ -1,5 +1,4 @@
 import { FaRegStar, FaStar } from 'react-icons/fa';
-import { text } from 'stream/consumers';
 
 type RatingProps = {
   rating: number;
