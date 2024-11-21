@@ -11,7 +11,6 @@ const FavoriteToggleButton = async ({ propertyId }: FavoriteToggleProps) => {
   const { userId } = auth();
 
   if (!userId) {
-    console.log('entrooo');
     return <CardSignInButton />;
   }
 
