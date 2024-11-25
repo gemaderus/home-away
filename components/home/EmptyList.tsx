@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button } from '../ui/button';
 
 type EmptyListProps = {
@@ -15,7 +16,9 @@ const EmptyList = ({
     <div className="mt-4">
       <h2 className="text-xl font-bold">{heading}</h2>
       <p className="text-lg">{message}</p>
-      <Button className="mt-2">{btnText}</Button>
+      <Button className="mt-2">
+        <Link href="/">{btnText}</Link>
+      </Button>
     </div>
   );
 };
