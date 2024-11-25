@@ -4,8 +4,18 @@ import { Label } from '@/components/ui/label';
 import { amenities, Amenity } from '@/utils/amenities';
 import { useState } from 'react';
 
-function AmenitiesInput({ defaultValue }: { defaultValue?: Amenity[] }) {
-  const [selectedAmenities, setSelectedAmenities] = useState<Amenity[]>(defaultValue || amenities);
+const AmenitiesInput = ({ defaultValue }: { defaultValue?: Amenity[] }) => {
+  const amenitiesWithIcons = defaultValue?.map(({ name, selected }) => {
+    return {
+      name,
+      selected,
+      icon: amenities.find((amenity) => amenity.name === name)!.icon,
+    };
+  });
+
+  const [selectedAmenities, setSelectedAmenities] = useState<Amenity[]>(
+    amenitiesWithIcons || amenities,
+  );
 
   const handleChange = (amenity: Amenity) => {
     setSelectedAmenities((prev) => {
@@ -40,6 +50,6 @@ function AmenitiesInput({ defaultValue }: { defaultValue?: Amenity[] }) {
       </ul>
     </section>
   );
-}
+};
 
 export default AmenitiesInput;
