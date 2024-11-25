@@ -65,12 +65,25 @@ const BookingPage = async () => {
                 <TableCell>{formatCurrency(orderTotal)}</TableCell>
                 <TableCell>{startDate}</TableCell>
                 <TableCell>{formatDate(checkOut)}</TableCell>
+                <TableCell>
+                  <DeleteBooking bookingId={id} />
+                </TableCell>
               </TableRow>
             );
           })}
         </TableBody>
       </Table>
     </div>
+  );
+};
+
+const DeleteBooking = ({ bookingId }: { bookingId: string }) => {
+  const deleteBooking = deleteBookingAction.bind(null, { bookingId });
+
+  return (
+    <FormContainer action={deleteBooking}>
+      <IconButton actionType="delete" />
+    </FormContainer>
   );
 };
 
