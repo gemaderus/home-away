@@ -2,7 +2,7 @@
 
 import { useProperty } from '@/utils/store';
 import { Booking } from '@/utils/types';
-import { use, useEffect } from 'react';
+import { useEffect } from 'react';
 import BookingCalendar from './BookingCalendar';
 import BookingContainer from './BookingContainer';
 

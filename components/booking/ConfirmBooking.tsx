@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import { createBookingAction } from '@/utils/actions';
 import { useProperty } from '@/utils/store';
 import { SignInButton, useAuth } from '@clerk/nextjs';
-import { stat } from 'fs';
 import { SubmitButton } from '../form/Buttons';
 import FormContainer from '../form/FormContainer';
 
