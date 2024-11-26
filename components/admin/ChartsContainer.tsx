@@ -1,7 +1,16 @@
-const ChartsContainer = () => {
+import Chart from '@/components/admin/Chart';
+import { fetchChartsData } from '@/utils/actions';
+
+const ChartsContainer = async () => {
+  const bookings = await fetchChartsData();
+
+  if (bookings.length === 0) {
+    return null;
+  }
+
   return (
     <div>
-      <h1>Charts</h1>
+      <Chart data={bookings} />
     </div>
   );
 };
