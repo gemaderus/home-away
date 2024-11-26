@@ -13,12 +13,38 @@ You can see the project in production in this url: [Home Away](https://home-away
 
 [Github repo](https://github.com/gemaderus/home-away).
 
-To run the project locally, you need to clone the repository and install the dependencies.
+To run the project locally, you need to clone the repository and install the dependencies
 
 ```bash
 git clone git@github.com:gemaderus/home-away.git
 cd home-away
 npm install
+```
+
+Apart from that you have to set up the .env file with this variables:
+
+```bash
+
+DB_PASSWORD=
+DATABASE_URL=
+DIRECT_URL=
+SUPABASE_URL=
+SUPABASE_KEY=
+ADMIN_USER_ID=
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+STRIPE_SECRET_KEY=
+```
+
+And the .env.local file with this variables:
+
+```bash
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+NEXT_PUBLIC_CLERK_SIGN_IN_FALLABACK_REDIRECT_URL=/profile/create
+NEXT_PUBLIC_CLERK_SIGN_UP_REDIRECT_URL=/profile/create
+NEXT_PUBLIC_WEBSITE_URL=http://localhost:3000
+
 ```
 
 ## Design
@@ -39,8 +65,8 @@ npm install
 
 ![Payment page](public/payment.jpg)
 
-To check the payment you can use the following card number: 4242 4242 4242 4242 with any future date
-and any 3 digits for the CVC.
+To check the payments you can use the following card number: 4242 4242 4242 4242 with any future
+date and any 3 digits for the CVC.
 
 ## Technologies used
 
