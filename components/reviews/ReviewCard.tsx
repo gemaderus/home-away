@@ -24,7 +24,6 @@ const ReviewCard = ({ reviewInfo, children }: ReviewCardProps) => {
             <Rating rating={reviewInfo.rating} />
           </div>
         </div>
-        <p className="mt-4">{reviewInfo.comment}</p>
       </CardHeader>
       <CardContent>
         <Comments comment={reviewInfo.comment} />
