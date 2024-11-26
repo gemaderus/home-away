@@ -1,6 +1,6 @@
 import db from '@/utils/db';
 import { formatDate } from '@/utils/format';
-import { type NextRequest, type NextResponse } from 'next/server';
+import { type NextRequest } from 'next/server';
 import Stripe from 'stripe';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
