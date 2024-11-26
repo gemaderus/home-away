@@ -5,7 +5,7 @@ import Stripe from 'stripe';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
 
-export const POST = async (req: NextRequest, res: NextResponse) => {
+export const POST = async (req: NextRequest) => {
   const requestHeaders = new Headers(req.headers);
 
   const origin = requestHeaders.get('origin');
@@ -66,6 +66,7 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
 
     return Response.json({ clientSecret: session.client_secret });
   } catch (error) {
+    console.log(error);
     return Response.json(null, { status: 500, statusText: 'Internal Server Error' });
   }
 };
